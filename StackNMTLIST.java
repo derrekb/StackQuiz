@@ -115,4 +115,34 @@ public class StackNMTLIST<X> implements StackIList<X>{
 		StackIList<X> res = this.filter((p -> !p.equals(v)));
 		return res;
 		}
+
+	@Override
+	public StackIList<X> push(X v) {
+		// TODO Auto-generated method stub
+		return this.cons(v);
+	}
+
+	@Override
+	public X top() throws Exception {
+		// TODO Auto-generated method stub
+		return this.first();
+	}
+
+	@Override
+	public StackIList<X> pop() throws Exception {
+		// TODO Auto-generated method stub
+		return this.remove(this.first());
+	}
+
+	@Override
+	public boolean emptyStack() {
+		// TODO Auto-generated method stub
+		return this.isEmpty();
+	}
+
+	@Override
+	public String ToString() {
+		// TODO Auto-generated method stub
+	return "First Stack: "+this.car+""+this.cdr.ToString();}
+	
 }
