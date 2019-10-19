@@ -41,4 +41,14 @@ public interface StackIList<X> {
 	//To determine if there exists elements in the given list for which the predicate holds
 	public StackIList<X> remove(X v);
 	//To remove all instances of v from the given list
+	public StackIList<X> pop() throws Exception;
+	//removes top from stack
+	public StackIList<X> push(X v);
+	//adds an element to the stack
+	public X top() throws Exception;
+	// returns top of stack
+	public boolean emptyStack();
+	//Purpose: to check if stack is empty
+	public String ToString();
+	//returns all elements in the stack
 }
