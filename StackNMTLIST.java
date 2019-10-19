@@ -1,29 +1,29 @@
 package Stack;
 
 public class StackNMTLIST<X> implements StackIList<X>{
-	private X car;
-	private StackIList<X> cdr;
+	private X car; //creating a private variable
+	private StackIList<X> cdr; //creating a private stack list
 	
 	public StackNMTLIST(X f, StackIList<X> r) {
-		car = f;
-		cdr = r;	}
+		car = f;//setting car equal variable f
+		cdr = r; // setting cdr equal to variable r	}
 	
-	public StackIList<X> cons(X v){
-		return new StackNMTLIST<X>(v,this);	}
+	public StackIList<X> cons(X v){ //method used to create a new list
+		return new StackNMTLIST<X>(v,this);//returns new list	}
 	
 	
-	public boolean isEmpty() {return false;}
+	public boolean isEmpty() {return false;} //check to see if a list is empty
 	
-	public boolean equals(StackIList<X> l) {
+	public boolean equals(StackIList<X> l) { //method is used to check if 2 lists are equal
 		try {return((this.first().equals(l.first())) && this.rest().equals(l.rest()));}
 		catch(Exception e) {
-			System.out.println("Error StackNMTLIST equals: "+e.getMessage());
+			System.out.println("Error StackNMTLIST equals: "+e.getMessage());//if the method catches an error, itll return error.
 			return false;}	}
 	
-	public X first() throws Exception{return car;}
-	public int lenght() {return (1 + this.cdr.lenght());}
+	public X first() throws Exception{return car;} //?
+	public int lenght() {return (1 + this.cdr.lenght());} //method used to find the legnth of a list
 	
-	public StackIList<X> rest() throws Exception {return cdr;}
+	public StackIList<X> rest() throws Exception {return cdr;} //?
 	
 	public X listref(int i) throws Exception{
 		if(i==0) {return car;}
