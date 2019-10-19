@@ -14,5 +14,6 @@ public interface ISTACK<X> {
 	public ISTACK<X> stackrest() throws Exception;
 	//To obtain all the elements of the stack besides top
 	public String ToString();
+	//returns all elements in the stack
 
 }
