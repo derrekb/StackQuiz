@@ -6,10 +6,28 @@ import org.junit.jupiter.api.Test;
 
 
 class StackIListTest {
-
 	
 	@Test
 	void ISTACK_LIST_TEST(){
+		StackIList<String> B = new StackMTLIST<String>();
+		StackIList<String> B1 = B.push("Hans").push("there ").push("Hello ");
+		StackIList<String> B2 = B.push("Hello ").push("there ").push("Hans");
+		StackIList<String> B3 = B.push("Hans").push("there ");
+		try {
+		assertEquals(B.emptyStack(), true);
+		assertEquals(B1.emptyStack(), false);
+		assertEquals(B1.pop().ToString().equals(B3.ToString()), true);
+		assertEquals(B1.top().equals("Hello "), true);
+		assertEquals(B1.reverse().ToString().equals(B2.ToString()), true);	
+		
+		}
+		catch(Exception e) {
+			System.out.println("Error ListTests: "+ e.getMessage());
+		}
+	}
+	
+	@Test
+	void STACK_TEST(){
 		ISTACK<String> A = new MTSTACK<String>();
 		ISTACK<String> A1 = A.push("Hans").push("there ").push("Hello ");
 		ISTACK<String> A2 = A.push("Hello ").push("there ").push("Hans");
