@@ -24,17 +24,20 @@ public class NMTSTACK<X> implements ISTACK<X> {
 	//Purpose: To check if the stack is empty or not
 	public boolean emptyStack() {return false;}// returns false because the non empty stack will lever be empty.
 	
-		private ISTACK<X> revhelper(ISTACK<X> l, ISTACK<X>res)
+	//Purpose: Helps reverse the stack
+	private ISTACK<X> revhelper(ISTACK<X> l, ISTACK<X>res)//creates 2 stacks 
 	//ACCUM INV: reverse(this) == append(reverse(l), res)
-	{try {if(l.emptyStack()) {return res;}
-	else{return (revhelper(l.stackrest(), res.push(l.top())));}}
+	{try {if(l.emptyStack()) {return res;}//if the stack is empty, returns the empty resonator
+	else{return (revhelper(l.stackrest(), res.push(l.top())));}}//Takes in rest of the stack and pushes the top element of l onto res. 
 	catch(Exception e) {
-		System.out.println("Error StackNMTLIST append: "+ e.getMessage());
+		System.out.println("Error StackNMTLIST append: "+ e.getMessage());//if error is caught, it returns the string.
 		return this;}	}
 	
-	public ISTACK<X> reverse() {ISTACK<X> A = new MTSTACK<X>(); 
-		return(revhelper(this, A));}
+	//Purpose: Revereses a stack and returns its reversed form	
+	public ISTACK<X> reverse() {ISTACK<X> A = new MTSTACK<X>(); //creates a new empty stack
+		return(revhelper(this, A));}//Uses the empty list to place the reversed stack
 	
+	//Purpose: Returns the given stack in a string
 	public String ToString() {return "First Stack: "+this.car+""+this.cdr.ToString();}
 
 	public static void main(String[] args) throws Exception {
