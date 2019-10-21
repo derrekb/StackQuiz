@@ -13,6 +13,6 @@ public interface ISTACK<X> {
 	public ISTACK<X> reverse();
 	//purpose: To obtain all the elements of the stack besides top
 	public ISTACK<X> stackrest() throws Exception;
-	//purpose: returns all elements in the stac
+	//purpose: returns all elements in the stack as a string
 	public String ToString();
 	}
