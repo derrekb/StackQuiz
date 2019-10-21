@@ -1,7 +1,7 @@
 package Stack;
 
 public class StackNMTLIST<X> implements StackIList<X>{
-	private X car;
+	private X car; 
 	private StackIList<X> cdr;
 	
 	public StackNMTLIST(X f, StackIList<X> r) {
@@ -13,10 +13,15 @@ public class StackNMTLIST<X> implements StackIList<X>{
 	
 	
 	public boolean isEmpty() {return false;}
+	//purpose: To check if a stack is empty but returns false because a stack cannot be empty in the non empty class. 
 	
 	public boolean equals(StackIList<X> l) {
+		//variable l is our local stack
+		//Purpose: to check if two stacks have equal elements
 		try {return((this.first().equals(l.first())) && this.rest().equals(l.rest()));}
-		catch(Exception e) {
+		//compares the first of both the lists and the rest of the elements in both of the lists.
+		catch(Exception e) 
+		{
 			System.out.println("Error StackNMTLIST equals: "+e.getMessage());
 			return false;}	}
 	
