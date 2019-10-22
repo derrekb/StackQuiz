@@ -13,10 +13,17 @@ public class Main {
     public static ISTACK<X> reverse(StackIList<X> A, ISTACK<X> stack) {
         // While the list is not empty recurse
         while(!A.isEmpty()) {
+            //Invariant: {0.. n-1) in the stack is in reverse order (n-1 is the unprocessed part of list
             // push the first element of the list onto the stack
+            //Invariant: [0...n) is reversed in stack
             stack = stack.push(A.car());
             // set the list to the rest of the elements
+            //Invariant: [n....i) is unprocessed
             A = A.cdr();
+
+            //Termination Argument: The loop will terminate because the stack will eventually become empty because
+            // the first eleement of the list is pushed every loop. Since the top car of the stack is pushed after every loop
+            // the stack will become empty making the while false terminating the loop.
         }
 
         // While the stack is not empty pop elements off
