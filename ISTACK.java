@@ -1,5 +1,12 @@
 package Stack;
 
+import Stack.ISTACK;
+
+/**
+ *Purpose: Interface for the Stack: Does not use List
+ *
+ * @param <X>
+ */
 public interface ISTACK<X> {
 	//purpose: adds top to stack
 	public ISTACK<X> push(X v);
@@ -11,9 +18,6 @@ public interface ISTACK<X> {
 	public boolean emptyStack();
 	//purpose: To reverse the stack
 	public ISTACK<X> reverse();
-	//purpose: To obtain all the elements of the stack besides top
-	public ISTACK<X> stackrest() throws Exception;
-	//purpose: returns all elements in the stack as a string
+	//purpose: To return all elements in the stack as strings
 	public String ToString();
-	//purpose: returns all elements in the stack
 	}
