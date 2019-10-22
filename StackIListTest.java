@@ -1,12 +1,49 @@
 package Stack;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
-
+/**
+ * Purpose: Test for STACKS
+ */
 
 class StackIListTest {
-
+	//TESTS FOR STACK : with list
+	@Test
+	void ISTACK_LIST_TEST(){
+		StackIList<String> B = new StackMTLIST<String>();
+		StackIList<String> B1 = B.push("Hans").push("there ").push("Hello ");
+		StackIList<String> B2 = B.push("Hello ").push("there ").push("Hans");
+		StackIList<String> B3 = B.push("Hans").push("there ");
+		try {
+		assertEquals(B.isEmpty(), true);
+		assertEquals(B1.isEmpty(), false);
+		assertEquals(B1.pop().ToString().equals(B3.ToString()), true);
+		assertEquals(B1.top().equals("Hello "), true);
+		assertEquals(B1.reverse().ToString().equals(B2.ToString()), true);	
+		
+		}
+		catch(Exception e) {
+			System.out.println("Error ListTests: "+ e.getMessage());
+		}
+	}
+	//Test for Stack: without List
+	@Test
+	void STACK_TEST(){
+		ISTACK<String> A = new MTSTACK<String>();
+		ISTACK<String> A1 = A.push("Hans").push("there ").push("Hello ");
+		ISTACK<String> A2 = A.push("Hello ").push("there ").push("Hans");
+		ISTACK<String> A3 = A.push("Hans").push("there ");
+		try {
+		assertEquals(A.emptyStack(), true);
+		assertEquals(A1.emptyStack(), false);
+		assertEquals(A1.pop().ToString().equals(A3.ToString()), true);
+		assertEquals(A1.top().equals("Hello "), true);
+		assertEquals(A1.reverse().ToString().equals(A2.ToString()), true);	
+		
+		}
+		catch(Exception e) {
+			System.out.println("Error ListTests: "+ e.getMessage());
+		}
+	}
 	@Test
 	void test() {
 		
@@ -31,7 +68,7 @@ class StackIListTest {
 			assertEquals(L0.isEmpty(), false);
 			assertEquals(L0.first(), "Hi ");
 			assertEquals(L0.rest().rest().first(), "pal!");
-			assertEquals(L0.listref(1), "there ");
+			assertEquals(L0.stackref(1), "there ");
 			assertEquals(L1.equals(E.append(L1)), true);
 			assertEquals(L2.equals(L0.append(L1)), true);
 			assertEquals(E.reverse().equals(E), true);
