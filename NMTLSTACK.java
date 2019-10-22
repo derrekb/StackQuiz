@@ -33,17 +33,4 @@ public class NMTSTACK<X> implements ISTACK<X> {
 	
 	public String ToString() {return "First Stack: "+this.car+""+this.cdr.ToString();}
 
-	public static void main(String[] args) throws Exception {
-		ISTACK<String> A = new MTSTACK<String>();
-		ISTACK<String> A1 = A.push("Hans").push("there ").push("Hello ");
-		ISTACK<String> A2 = A.push("Hello ").push("there ").push("Hans ");
-		ISTACK<String> A3 = A.push("Hans").push("there ");
-	
-	
-		System.out.println((A1.pop().ToString()));
-		System.out.println(A3.ToString());
-	}
-
-
-
 }
