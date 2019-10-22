@@ -6,7 +6,8 @@ public class NMTSTACK<X> implements ISTACK<X> {
 	
 	public NMTSTACK(X f, ISTACK<X> r) {
 		car = f;//first of the list
-		cdr = r;//restt of the list	}
+		cdr = r;//restt of the list	
+		}
 	
 	//Purpose: to push an element on a stack, (putting an new element on top). var X is our list and local variable v get puts on top of the stack.
 	public ISTACK<X> push(X v){
