@@ -13,22 +13,26 @@ public class Main {
     public static ISTACK<X> reverse(StackIList<X> A, ISTACK<X> stack) {
         // While the list is not empty recurse
         while(!A.isEmpty()) {
-            stack = stack.push(A.car()); // push the first element of the list onto the stack
-            A = A.cdr(); // set the list to the rest of the elements
+            // push the first element of the list onto the stack
+            stack = stack.push(A.car());
+            // set the list to the rest of the elements
+            A = A.cdr();
         }
 
         // While the stack is not empty pop elements off
         while(!stack.isEmpty()) {
             try {
-                A = A.addEnd(stack.top()); // Place the element at the top of the stack to the back of the list
-                stack = stack.pop(); // set the stack equal to the rest of the stack
+                // Place the element at the top of the stack to the back of the list
+                A = A.addEnd(stack.top());
+                // set the stack equal to the rest of the stack
+                stack = stack.pop();
 
             } catch (Exception e) {
                 e.printStackTrace(); // handle the error
             }
         }
-
-        return A; // return the reversed list
+        // return the reversed list
+        return A;
     }
 
 
