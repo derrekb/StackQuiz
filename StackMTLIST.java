@@ -46,34 +46,4 @@ public class StackMTLIST<X> implements StackIList<X>{
 	
 	public StackIList<X> remove(X v) {return this;}
 
-	@Override
-	public StackIList<X> pop() throws Exception {
-		// TODO Auto-generated method stub
-		throw new Exception("Method third applied to an empty list");}
-	
-
-	@Override
-	public StackIList<X> push(X v) {
-		// TODO Auto-generated method stub
-		StackIList<X> A = new StackMTLIST(); 
-		return A.cons(v);}
-	
-	@Override
-	public X top() throws Exception {
-		// TODO Auto-generated method stub
-		throw new Exception("Method top applied to an empty list");}
-	
-
-	@Override
-	public boolean emptyStack() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
-	public String ToString() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }

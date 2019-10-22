@@ -1,29 +1,34 @@
 package Stack;
 
 public class StackNMTLIST<X> implements StackIList<X>{
-	private X car; //creating a private variable
-	private StackIList<X> cdr; //creating a private stack list
+	private X car; 
+	private StackIList<X> cdr;
 	
 	public StackNMTLIST(X f, StackIList<X> r) {
-		car = f;//setting car equal variable f
-		cdr = r; // setting cdr equal to variable r	}
+		car = f;
+		cdr = r;	}
 	
-	public StackIList<X> cons(X v){ //method used to create a new list
-		return new StackNMTLIST<X>(v,this);//returns new list	}
+	public StackIList<X> cons(X v){
+		return new StackNMTLIST<X>(v,this);	}
 	
 	
-	public boolean isEmpty() {return false;} //check to see if a list is empty
+	public boolean isEmpty() {return false;}
+	//purpose: To check if a stack is empty but returns false because a stack cannot be empty in the non empty class. 
 	
-	public boolean equals(StackIList<X> l) { //method is used to check if 2 lists are equal
+	public boolean equals(StackIList<X> l) {
+		//variable l is our local stack
+		//Purpose: to check if two stacks have equal elements
 		try {return((this.first().equals(l.first())) && this.rest().equals(l.rest()));}
-		catch(Exception e) {
-			System.out.println("Error StackNMTLIST equals: "+e.getMessage());//if the method catches an error, itll return error.
+		//compares the first of both the lists and the rest of the elements in both of the lists.
+		catch(Exception e) 
+		{
+			System.out.println("Error StackNMTLIST equals: "+e.getMessage());
 			return false;}	}
 	
-	public X first() throws Exception{return car;} //?
-	public int lenght() {return (1 + this.cdr.lenght());} //method used to find the legnth of a list
+	public X first() throws Exception{return car;}
+	public int lenght() {return (1 + this.cdr.lenght());}
 	
-	public StackIList<X> rest() throws Exception {return cdr;} //?
+	public StackIList<X> rest() throws Exception {return cdr;}
 	
 	public X listref(int i) throws Exception{
 		if(i==0) {return car;}
@@ -115,34 +120,4 @@ public class StackNMTLIST<X> implements StackIList<X>{
 		StackIList<X> res = this.filter((p -> !p.equals(v)));
 		return res;
 		}
-
-	@Override
-	public StackIList<X> push(X v) {
-		// TODO Auto-generated method stub
-		return this.cons(v);
-	}
-
-	@Override
-	public X top() throws Exception {
-		// TODO Auto-generated method stub
-		return this.first();
-	}
-
-	@Override
-	public StackIList<X> pop() throws Exception {
-		// TODO Auto-generated method stub
-		return this.remove(this.first());
-	}
-
-	@Override
-	public boolean emptyStack() {
-		// TODO Auto-generated method stub
-		return this.isEmpty();
-	}
-
-	@Override
-	public String ToString() {
-		// TODO Auto-generated method stub
-	return "First Stack: "+this.car+""+this.cdr.ToString();}
-	
 }
