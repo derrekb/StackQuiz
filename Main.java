@@ -1,9 +1,7 @@
 package Stack;
+import Stack.ISTACK;
+import Stack.MTSTACK;
 
-import Stack.IList;
-import Stack.IStack;
-import Stack.MTList;
-import Stack.MTStack;
 
 public class Main {
 	/** NOTE: ADD MORE COMMENTS THEN WHAT I HAVE
@@ -12,18 +10,17 @@ public class Main {
      * @param stack The stack that you will use
      * @return aList that is reversed
      */
-    public static IList reverse(IList aList, IStack stack) {
-
+    public static ISTACK<X> reverse(StackIList<X> A, ISTACK<X> stack) {
         // While the list is not empty recurse
-        while(!aList.isEmpty()) {
-            stack = stack.push(aList.car()); // push the first element of the list onto the stack
-            aList = aList.cdr(); // set the list to the rest of the elements
+        while(!A.isEmpty()) {
+            stack = stack.push(A.car()); // push the first element of the list onto the stack
+            A = A.cdr(); // set the list to the rest of the elements
         }
 
         // While the stack is not empty pop elements off
         while(!stack.isEmpty()) {
             try {
-                aList = aList.addEnd(stack.top()); // Place the element at the top of the stack to the back of the list
+                A = A.addEnd(stack.top()); // Place the element at the top of the stack to the back of the list
                 stack = stack.pop(); // set the stack equal to the rest of the stack
 
             } catch (Exception e) {
@@ -31,17 +28,17 @@ public class Main {
             }
         }
 
-        return aList; // return the reversed list
+        return A; // return the reversed list
     }
 
 
     public static void main(String[] args) {
-        IList list = new MTList<Integer>().cons(4).cons(5).cons(6).cons(7).cons(7);
-        System.out.println(list.toString());
+        ISTACK<X> B = new MTSTACK<Integer>().push(4).push(5).push(6).push(7).push(7);
+        System.out.println(B.toString());
 
 
-        IList reverseList = reverse(list, new MTStack<Integer>());
-        System.out.println(reverseList.toString());
+        ISTACK<X> reversestack = reverse(B, new MTStack<Integer>());
+        System.out.println(reversestack.toString());
 
     }
 
