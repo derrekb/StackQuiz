@@ -15,4 +15,5 @@ public interface ISTACK<X> {
 	public ISTACK<X> stackrest() throws Exception;
 	//purpose: returns all elements in the stack as a string
 	public String ToString();
+	//purpose: returns all elements in the stack
 	}
