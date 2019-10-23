@@ -66,7 +66,7 @@ public class Main {
         StackIList<Integer> list1reversed = new StackNMTLIST<>(4, new StackMTLIST<>());
         list1reversed = list1reversed.cons(3).cons(2).cons(1);
 
-
+        // Check if the lists are equal
         StackIList<Integer> postReversel1 = reverse(list1, new MTSTACK<Integer>() );
         System.out.println(postReversel1.equals(list1reversed));
     }
