@@ -15,9 +15,7 @@ public class Main {
         while(!A.isEmpty()) {
 
             //Invariant: [0.. n-1) in the stack A is in reverse order (n-1) is the unprocessed part of list
-
             
-        
 
             //Invariant: [0...n) is reversed in stack
             stack = stack.push(A.car());
