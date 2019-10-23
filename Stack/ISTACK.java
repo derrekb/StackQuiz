@@ -20,4 +20,5 @@ public interface ISTACK<X> {
 	public ISTACK<X> reverse();
 	//purpose: To return all elements in the stack as strings
 	public String ToString();
+
 	}

@@ -45,7 +45,7 @@ package Stack;
 			// returns false because the non empty stack will lever be empty.
 		
 		//Purpose: Helps reverse the stack
-		//Not our main reverse method, main reverse method is implemented in Main Class
+		//Not our main reverse method, main reverse method is implemented in Stack.Main Class
 		//takes in 2 stacks:
 		private ISTACK<X> revhelper(ISTACK<X> l, ISTACK<X>res)
 		//ACCUM INV: reverse(this) == append(reverse(l), res)
@@ -60,7 +60,7 @@ package Stack;
 				return this;}	}
 		
 		//Purpose: Reverses a stack and returns its reversed form	
-		//Not our main reverse method, main reverse method is implemented in Main Class
+		//Not our main reverse method, main reverse method is implemented in Stack.Main Class
 		public ISTACK<X> reverse() {
 			ISTACK<X> A = new MTSTACK<X>(); 
 			//creates a new empty stack
