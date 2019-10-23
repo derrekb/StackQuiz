@@ -5,6 +5,7 @@
 *.idea
 *.project
 *.out
+*.iml
 
 # Log file
 *.log
