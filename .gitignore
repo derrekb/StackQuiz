@@ -1,7 +1,10 @@
 # Compiled class file
 *.class
+
+#intelij and eclipse stuff
 *.idea
 *.project
+*.out
 
 # Log file
 *.log
