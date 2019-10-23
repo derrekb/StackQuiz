@@ -13,9 +13,12 @@ public class Main {
     public static ISTACK<X> reverse(StackIList<X> A, ISTACK<X> stack) {
         // While the list is not empty recurse
         while(!A.isEmpty()) {
+
             //Invariant: [0.. n-1) in the stack A is in reverse order (n-1) is the unprocessed part of list
 
-           
+            
+        
+
             //Invariant: [0...n) is reversed in stack
             stack = stack.push(A.car());
              // push the first element of the list onto the stack
