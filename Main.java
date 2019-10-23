@@ -14,6 +14,7 @@ public class Main {
         // While the list is not empty recurse
         while(!A.isEmpty()) {
             //Invariant: {0.. n-1) in the stack is in reverse order (n-1 is the unprocessed part of list
+            
             // push the first element of the list onto the stack
             //Invariant: [0...n) is reversed in stack
             stack = stack.push(A.car());
